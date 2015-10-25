@@ -1,14 +1,14 @@
 package io.palaima.debugdrawer.okhttp;
 
-import com.squareup.okhttp.Cache;
-import com.squareup.okhttp.OkHttpClient;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import io.palaima.debugdrawer.module.DrawerModule;
+import com.squareup.okhttp.Cache;
+import com.squareup.okhttp.OkHttpClient;
+
+import io.palaima.debugdrawer.drawer.DrawerModule;
 
 public class OkHttpModule implements DrawerModule {
 

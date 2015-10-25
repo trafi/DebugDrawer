@@ -27,6 +27,7 @@ import android.widget.Switch;
 
 import io.palaima.debugdrawer.R;
 import io.palaima.debugdrawer.controller.NetworkController;
+import io.palaima.debugdrawer.drawer.DrawerModule;
 
 public class NetworkModule implements DrawerModule {
 

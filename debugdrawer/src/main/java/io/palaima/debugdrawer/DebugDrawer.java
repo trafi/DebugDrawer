@@ -34,11 +34,12 @@ import android.widget.ScrollView;
 import java.util.ArrayList;
 import java.util.Collections;
 
-import io.palaima.debugdrawer.module.DrawerModule;
+import io.palaima.debugdrawer.drawer.BaseDebugDrawer;
+import io.palaima.debugdrawer.drawer.DrawerModule;
 import io.palaima.debugdrawer.util.UIUtils;
 import io.palaima.debugdrawer.view.ScrimInsetsFrameLayout;
 
-public class DebugDrawer {
+public class DebugDrawer implements BaseDebugDrawer {
 
     private final DrawerLayout mDrawerLayout;
 
@@ -59,7 +60,7 @@ public class DebugDrawer {
     /**
      * Open the drawer
      */
-    public void openDrawer() {
+    @Override public void open() {
         if (mDrawerLayout != null && mSliderLayout != null) {
             if (mDrawerGravity != 0) {
                 mDrawerLayout.openDrawer(mDrawerGravity);
@@ -72,7 +73,7 @@ public class DebugDrawer {
     /**
      * close the drawer
      */
-    public void closeDrawer() {
+    @Override public void close() {
         if (mDrawerLayout != null) {
             if (mDrawerGravity != 0) {
                 mDrawerLayout.closeDrawer(mDrawerGravity);
@@ -88,7 +89,7 @@ public class DebugDrawer {
      *
      * @return
      */
-    public boolean isDrawerOpen() {
+    @Override public boolean isOpen() {
         if (mDrawerLayout != null && mSliderLayout != null) {
             return mDrawerLayout.isDrawerOpen(mSliderLayout);
         }
@@ -98,7 +99,7 @@ public class DebugDrawer {
     /**
      * Starts all modules and calls their {@link DrawerModule#onStart()} method
      */
-    public void onStart() {
+    @Override public void onStart() {
         for (DrawerModule drawerItem : mDrawerItems) {
             drawerItem.onStart();
         }
@@ -107,7 +108,7 @@ public class DebugDrawer {
     /**
      * Removes all modules and calls their {@link DrawerModule#onStop()} method
      */
-    public void onStop() {
+    @Override public void onStop() {
         for (DrawerModule drawerItem : mDrawerItems) {
             drawerItem.onStop();
         }

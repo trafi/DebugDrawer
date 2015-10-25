@@ -25,6 +25,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import io.palaima.debugdrawer.R;
+import io.palaima.debugdrawer.drawer.DrawerModule;
 
 public class BuildModule implements DrawerModule {
 

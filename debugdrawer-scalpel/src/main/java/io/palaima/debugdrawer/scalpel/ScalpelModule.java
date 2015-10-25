@@ -1,8 +1,6 @@
 package io.palaima.debugdrawer.scalpel;
 
 
-import com.jakewharton.scalpel.ScalpelFrameLayout;
-
 import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -12,7 +10,9 @@ import android.widget.CompoundButton;
 import android.widget.LinearLayout;
 import android.widget.Switch;
 
-import io.palaima.debugdrawer.module.DrawerModule;
+import com.jakewharton.scalpel.ScalpelFrameLayout;
+
+import io.palaima.debugdrawer.drawer.DrawerModule;
 
 public class ScalpelModule implements DrawerModule {
 

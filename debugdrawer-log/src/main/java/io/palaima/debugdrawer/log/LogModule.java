@@ -3,8 +3,9 @@ package io.palaima.debugdrawer.log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import io.palaima.debugdrawer.drawer.DrawerModule;
 import io.palaima.debugdrawer.log.ui.LogDialog;
-import io.palaima.debugdrawer.module.DrawerModule;
 
 public class LogModule implements DrawerModule {
     @Override

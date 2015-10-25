@@ -46,7 +46,8 @@ dependencies {
     compile 'io.palaima.debugdrawer:debugdrawer-picasso:0.4.0'
     compile 'io.palaima.debugdrawer:debugdrawer-location:0.4.0'
     compile 'io.palaima.debugdrawer:debugdrawer-log:0.4.0'*/
-    compile project(':debugdrawer')
+    debugCompile project(':debugdrawer')
+    releaseCompile project(':debugdrawer-no-op')
     compile project(':debugdrawer-picasso')
     compile project(':debugdrawer-okhttp')
     compile project(':debugdrawer-scalpel')

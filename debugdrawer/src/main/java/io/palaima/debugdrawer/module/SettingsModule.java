@@ -29,6 +29,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import io.palaima.debugdrawer.R;
+import io.palaima.debugdrawer.drawer.DrawerModule;
 
 public class SettingsModule implements DrawerModule, View.OnClickListener {
 

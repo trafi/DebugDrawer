@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.CompoundButton;
 import android.widget.Switch;
 
-import io.palaima.debugdrawer.module.DrawerModule;
+import io.palaima.debugdrawer.drawer.DrawerModule;
 import jp.wasabeef.takt.Takt;
 
 public class FpsModule implements DrawerModule {

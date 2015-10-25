@@ -1,8 +1,5 @@
 package io.palaima.debugdrawer.picasso;
 
-import com.squareup.picasso.Picasso;
-import com.squareup.picasso.StatsSnapshot;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,7 +7,10 @@ import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.TextView;
 
-import io.palaima.debugdrawer.module.DrawerModule;
+import com.squareup.picasso.Picasso;
+import com.squareup.picasso.StatsSnapshot;
+
+import io.palaima.debugdrawer.drawer.DrawerModule;
 
 public class PicassoModule implements DrawerModule {
 
