@@ -1,12 +1,12 @@
 package io.palaima.debugdrawer.okhttp;
 
-import com.squareup.okhttp.Cache;
-import com.squareup.okhttp.OkHttpClient;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.squareup.okhttp.Cache;
+import com.squareup.okhttp.OkHttpClient;
 
 import io.palaima.debugdrawer.module.DrawerModule;
 
@@ -77,7 +77,7 @@ public class OkHttpModule implements DrawerModule {
     }
 
     private static String getSizeString(long bytes) {
-        String[] units = new String[] { "B", "KB", "MB", "GB" };
+        String[] units = new String[]{"B", "KB", "MB", "GB"};
         int unit = 0;
         while (bytes >= 1024) {
             bytes /= 1024;

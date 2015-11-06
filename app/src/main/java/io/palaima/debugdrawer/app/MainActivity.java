@@ -25,6 +25,7 @@ import io.palaima.debugdrawer.fps.FpsModule;
 import io.palaima.debugdrawer.log.LogModule;
 import io.palaima.debugdrawer.module.BuildModule;
 import io.palaima.debugdrawer.module.DeviceModule;
+import io.palaima.debugdrawer.module.EndpointsModule;
 import io.palaima.debugdrawer.module.LocationModule;
 import io.palaima.debugdrawer.module.MadgeModule;
 import io.palaima.debugdrawer.module.NetworkModule;
@@ -70,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
         if (BuildConfig.DEBUG) {
             mDebugDrawer = new DebugDrawer.Builder(this).modules(
                     new FpsModule(Takt.stock(getApplication())),
+                    new EndpointsModule(this),
                     new LocationModule(this),
                     new ScalpelModule(this),
                     new MadgeModule(this),

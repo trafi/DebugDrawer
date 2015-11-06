@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:columnCount="2"
+    android:padding="12dp"
+    tools:ignore="UselessParent">
+
+    <TextView
+        style="@style/Widget.DebugDrawer.Header"
+        android:layout_width="0dp"
+        android:layout_columnSpan="2"
+        android:layout_gravity="start|fill_horizontal"
+        android:text="Endpoints" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_gravity="start|fill_horizontal"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <Spinner
+            android:id="@+id/debug_network_endpoint"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <ImageButton
+            android:id="@+id/debug_network_endpoint_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:layout_marginStart="4dp"
+            android:background="?android:attr/actionBarItemBackground"
+            android:contentDescription="@null"
+            android:src="@drawable/debug_drawer_icon_edit"
+            android:visibility="gone" />
+    </LinearLayout>
+
+</GridLayout>
