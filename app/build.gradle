@@ -50,8 +50,6 @@ dependencies {
     compile project(':debugdrawer')
     compile project(':debugdrawer-picasso')
     compile project(':debugdrawer-okhttp')
-    compile project(':debugdrawer-scalpel')
-    compile project(':debugdrawer-location')
     compile project(':debugdrawer-log')
     compile project(':debugdrawer-fps')
 
