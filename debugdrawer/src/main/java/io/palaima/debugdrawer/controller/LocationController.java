@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package io.palaima.debugdrawer.location;
+package io.palaima.debugdrawer.controller;
 
 import android.content.Context;
 import android.location.Location;

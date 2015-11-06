@@ -22,15 +22,16 @@ import java.util.concurrent.TimeUnit;
 
 import io.palaima.debugdrawer.DebugDrawer;
 import io.palaima.debugdrawer.fps.FpsModule;
-import io.palaima.debugdrawer.location.LocationModule;
 import io.palaima.debugdrawer.log.LogModule;
 import io.palaima.debugdrawer.module.BuildModule;
 import io.palaima.debugdrawer.module.DeviceModule;
+import io.palaima.debugdrawer.module.LocationModule;
+import io.palaima.debugdrawer.module.MadgeModule;
 import io.palaima.debugdrawer.module.NetworkModule;
+import io.palaima.debugdrawer.module.ScalpelModule;
 import io.palaima.debugdrawer.module.SettingsModule;
 import io.palaima.debugdrawer.okhttp.OkHttpModule;
 import io.palaima.debugdrawer.picasso.PicassoModule;
-import io.palaima.debugdrawer.scalpel.ScalpelModule;
 import jp.wasabeef.takt.Takt;
 import timber.log.Timber;
 
@@ -71,6 +72,7 @@ public class MainActivity extends AppCompatActivity {
                     new FpsModule(Takt.stock(getApplication())),
                     new LocationModule(this),
                     new ScalpelModule(this),
+                    new MadgeModule(this),
                     new LogModule(),
                     new OkHttpModule(mOkHttpClient),
                     new PicassoModule(mPicasso),
@@ -147,7 +149,7 @@ public class MainActivity extends AppCompatActivity {
         return mToolbar;
     }
 
-    private static final int DISK_CACHE_SIZE = 50*1024*1024; // 50 MB
+    private static final int DISK_CACHE_SIZE = 50 * 1024 * 1024; // 50 MB
 
     private static OkHttpClient createOkHttpClient(Application application) {
         final OkHttpClient client = new OkHttpClient();

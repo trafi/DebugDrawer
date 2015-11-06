@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package io.palaima.debugdrawer.location;
+package io.palaima.debugdrawer.module;
 
 import android.Manifest;
 import android.content.ActivityNotFoundException;
@@ -42,6 +42,7 @@ import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 import io.palaima.debugdrawer.R;
+import io.palaima.debugdrawer.controller.LocationController;
 import io.palaima.debugdrawer.module.DrawerModule;
 
 public class LocationModule implements DrawerModule {

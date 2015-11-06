@@ -1,4 +1,4 @@
-package io.palaima.debugdrawer.scalpel;
+package io.palaima.debugdrawer.module;
 
 
 import android.app.Activity;
