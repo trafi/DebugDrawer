@@ -36,7 +36,7 @@ import io.palaima.debugdrawer.picasso.PicassoModule;
 import jp.wasabeef.takt.Takt;
 import timber.log.Timber;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements EndpointsModule.OnEndpointChanged {
 
     private Toolbar mToolbar;
 
@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
         if (BuildConfig.DEBUG) {
             mDebugDrawer = new DebugDrawer.Builder(this).modules(
                     new FpsModule(Takt.stock(getApplication())),
-                    new EndpointsModule(this),
+                    new EndpointsModule(this,new String[]{"labas","dienas"},"labas"),
                     new LocationModule(this),
                     new ScalpelModule(this),
                     new MadgeModule(this),
@@ -163,5 +163,10 @@ public class MainActivity extends AppCompatActivity {
         client.setCache(new Cache(cacheDir, DISK_CACHE_SIZE));
 
         return client;
+    }
+
+    @Override
+    public void onEndpointChange(String urlText) {
+
     }
 }
