@@ -15,24 +15,24 @@ import io.palaima.debugdrawer.R;
 /**
  * Created by eligijus on 06/11/15.
  */
-public class EndpointsModule implements DrawerModule {
+public class AppModule implements DrawerModule {
 
     private final Context context;
     private final String[] endpoints;
     private String selectedEndpoint;
-    private OnEndpointChanged listener;
+    private AppModuleListener listener;
 
-    public EndpointsModule(Activity activity, String[] endpoints, String selectedEndpoint) {
+    public AppModule(Activity activity, String[] endpoints, String selectedEndpoint) {
         this.context = activity;
         this.endpoints = endpoints;
         this.selectedEndpoint = selectedEndpoint;
-        this.listener = (OnEndpointChanged) activity;
+        this.listener = (AppModuleListener) activity;
     }
 
     @NonNull
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup parent) {
-        View view = inflater.inflate(R.layout.debug_drawer_item_endpoints, parent, false);
+        View view = inflater.inflate(R.layout.debug_drawer_item_app, parent, false);
         Spinner spinner = (Spinner) view.findViewById(R.id.debug_network_endpoint);
         ArrayAdapter<String> adapter = new ArrayAdapter<>(context, R.layout.debug_view_spinner_item, endpoints);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -55,6 +55,14 @@ public class EndpointsModule implements DrawerModule {
 
             }
         });
+
+        view.findViewById(R.id.buttonOnBoarding).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                listener.onOnboardingButtonClick();
+            }
+        });
+
 
         return view;
     }
@@ -79,7 +87,9 @@ public class EndpointsModule implements DrawerModule {
 
     }
 
-    public interface OnEndpointChanged {
+    public interface AppModuleListener {
         void onEndpointChange(String urlText);
+
+        void onOnboardingButtonClick();
     }
 }
