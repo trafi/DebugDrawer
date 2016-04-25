@@ -20,7 +20,7 @@
         android:layout_height="wrap_content" />
 
     <Button
-        android:id="@+id/buttonOnBoarding"
+        android:id="@+id/button_onboarding"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_column="0"
@@ -28,5 +28,15 @@
         android:layout_row="2"
         android:gravity="center"
         android:text="Show onboarding" />
+
+    <Switch
+        android:id="@+id/enable_localytics_toasts"
+        style="@style/Widget.DebugDrawer.RowWidget"
+        android:textColor="#ffffff"
+        android:layout_gravity="start|center_vertical"
+        android:text="Localytics logs     "
+        android:textAppearance="@style/Widget.DebugDrawer.RowTitle"
+        android:layout_column="0"/>
+        />
 
 </GridLayout>

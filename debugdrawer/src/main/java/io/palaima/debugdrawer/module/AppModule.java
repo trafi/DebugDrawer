@@ -8,7 +8,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.CompoundButton;
 import android.widget.Spinner;
+import android.widget.Switch;
 
 import io.palaima.debugdrawer.R;
 
@@ -33,6 +35,13 @@ public class AppModule implements DrawerModule {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup parent) {
         View view = inflater.inflate(R.layout.debug_drawer_item_app, parent, false);
+        Switch logSwitch = (Switch) view.findViewById(R.id.enable_localytics_toasts);
+        logSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                listener.onLocalyticsLogSwitchCheckedChanged(isChecked);
+            }
+        });
         Spinner spinner = (Spinner) view.findViewById(R.id.debug_network_endpoint);
         ArrayAdapter<String> adapter = new ArrayAdapter<>(context, R.layout.debug_view_spinner_item, endpoints);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -56,14 +65,12 @@ public class AppModule implements DrawerModule {
             }
         });
 
-        view.findViewById(R.id.buttonOnBoarding).setOnClickListener(new View.OnClickListener() {
+        view.findViewById(R.id.button_onboarding).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 listener.onOnboardingButtonClick();
             }
         });
-
-
         return view;
     }
 
@@ -91,5 +98,7 @@ public class AppModule implements DrawerModule {
         void onEndpointChange(String urlText);
 
         void onOnboardingButtonClick();
+
+        void onLocalyticsLogSwitchCheckedChanged(boolean isChecked);
     }
 }
